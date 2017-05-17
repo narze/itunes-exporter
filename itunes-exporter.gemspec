@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'itunes/exporter/version'
+require 'itunes_exporter/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "itunes-exporter"
-  spec.version       = Itunes::Exporter::VERSION
+  spec.version       = ItunesExporter::VERSION
   spec.authors       = ["Manassarn Manoonchai"]
   spec.email         = ["manassarn@gmail.com"]
 

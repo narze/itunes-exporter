@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "itunes/exporter"
+require "itunes_exporter"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
