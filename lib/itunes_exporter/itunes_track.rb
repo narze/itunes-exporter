@@ -23,6 +23,11 @@ class ItunesTrack < Struct.new(*%i{
   genre
   kind
   location
+  play_count
+  play_date
+  play_date_utc
+  loved
+  hated
 })
 
   def initialize(attributes)

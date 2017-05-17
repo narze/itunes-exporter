@@ -28,7 +28,12 @@ class ItunesPlaylist < Struct.new(:tracks, :playlists)
                       album: track_data['Album'],
                       genre: track_data['Genre'],
                       kind: track_data['Kind'],
-                      location: track_data['Location']
+                      location: track_data['Location'],
+                      play_count: track_data['Play Count'],
+                      play_date: track_data['Play Date'],
+                      play_date_utc: track_data['Play Date UTC'],
+                      loved: track_data['Loved'],
+                      hated: track_data['Hated']
     end
   end
 end

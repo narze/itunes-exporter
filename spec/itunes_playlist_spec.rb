@@ -22,7 +22,7 @@ RSpec.describe ItunesPlaylist do
 
       it 'has matching attributes' do
         is_expected
-          .to have_attributes track_id: 72,
+          .to have_attributes track_id: 74,
                               size: 9771859,
                               total_time: 233377,
                               disc_number: 2,
@@ -34,6 +34,10 @@ RSpec.describe ItunesPlaylist do
                               date_added: DateTime.parse('2017-05-17T13:06:35Z'),
                               bit_rate: 320,
                               sample_rate: 44100,
+                              play_count: 1,
+                              play_date: 3577904253,
+                              play_date_utc: DateTime.parse('2017-05-17T15:17:33Z'),
+                              loved: true,
                               compilation: true,
                               artwork_count: 1,
                               persistent_id: '0E272F11ED9075C4',
@@ -45,7 +49,7 @@ RSpec.describe ItunesPlaylist do
                               album: 'EXIT TRANCE PRESENTS SPEED アニメトランス BEST 7',
                               genre: 'J-Trance',
                               kind: 'MPEG audio file',
-                              location: 'file:///Users/username/Music/iTunes/iTunes%20Media/Music/Compilations/EXIT%20TRANCE%20PRESENTS%20SPEED%20%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%20BEST%207/2-14%20masterpiece.mp3'
+                              location: 'file:///Users/username/Music/iTunes%20test/iTunes%20Media/Music/Compilations/EXIT%20TRANCE%20PRESENTS%20SPEED%20%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%20BEST%207/2-14%20masterpiece.mp3'
       end
     end
   end
