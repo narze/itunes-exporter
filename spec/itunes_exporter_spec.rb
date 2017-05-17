@@ -8,7 +8,7 @@ RSpec.describe ItunesExporter do
   describe '.load' do
     subject { ItunesExporter.load(xml_path) }
 
-    let(:xml_path) { File.join(__FILE__, '..', 'support', 'iTunes Playlist.xml') }
+    let(:xml_path) { File.join(File.expand_path('../support', __FILE__), 'iTunes Library.xml') }
 
     it 'initialize ItunesPlaylist instance' do
       is_expected.to be_an ItunesPlaylist
