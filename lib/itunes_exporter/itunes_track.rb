@@ -27,8 +27,15 @@ class ItunesTrack < Struct.new(*%i{
   play_count
   play_date
   play_date_utc
+  skip_count
+  skip_date
   loved
   hated
+  rating
+  rating_ratio
+  album_rating
+  album_rating_computed
+  comments
 })
 
   def initialize(attributes)

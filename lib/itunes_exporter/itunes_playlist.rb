@@ -34,7 +34,14 @@ class ItunesPlaylist < Struct.new(:tracks, :playlists)
                       play_date: track_data['Play Date'],
                       play_date_utc: track_data['Play Date UTC'],
                       loved: track_data['Loved'],
-                      hated: track_data['Hated']
+                      hated: track_data['Hated'],
+                      skip_count: track_data['Skip Count'],
+                      skip_date: track_data['Skip Date'],
+                      rating: track_data['Rating'],
+                      rating_ratio: (track_data['Rating'] || 0) / 100.0,
+                      album_rating: track_data['Album Rating'],
+                      album_rating_computed: track_data['Album Rating Computed'],
+                      comments: track_data['Comments']
     end
   end
 end

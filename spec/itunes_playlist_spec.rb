@@ -50,7 +50,14 @@ RSpec.describe ItunesPlaylist do
                               genre: 'J-Trance',
                               kind: 'MPEG audio file',
                               location: 'file:///Users/username/Music/iTunes%20test/iTunes%20Media/Music/Compilations/EXIT%20TRANCE%20PRESENTS%20SPEED%20%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%20BEST%207/2-14%20masterpiece.mp3',
-                              location_absolute: '/Users/username/Music/iTunes%20test/iTunes%20Media/Music/Compilations/EXIT%20TRANCE%20PRESENTS%20SPEED%20%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%20BEST%207/2-14%20masterpiece.mp3'
+                              location_absolute: '/Users/username/Music/iTunes%20test/iTunes%20Media/Music/Compilations/EXIT%20TRANCE%20PRESENTS%20SPEED%20%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%20BEST%207/2-14%20masterpiece.mp3',
+                              skip_count: 1,
+                              skip_date: DateTime.parse('2012-05-19T21:28:40Z'),
+                              rating: 100,
+                              rating_ratio: 1.0,
+                              album_rating: 60,
+                              album_rating_computed: true,
+                              comments: 'Hello World'
       end
     end
   end
