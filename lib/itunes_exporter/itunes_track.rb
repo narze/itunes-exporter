@@ -1,4 +1,5 @@
 require 'mp3info'
+require 'sqlite3'
 
 class ItunesTrack < Struct.new(*%i{
   track_id
@@ -38,6 +39,10 @@ class ItunesTrack < Struct.new(*%i{
   comments
 })
 
+  def ItunesTrack.db
+    @db ||= SQLite3::Database.new("/Users/#{Etc.getlogin}/Library/Application Support/Clementine/clementine.db")
+  end
+
   def initialize(attributes)
     attributes.each { |k, v| self[k] = v }
   end
@@ -50,7 +55,15 @@ class ItunesTrack < Struct.new(*%i{
     (rating || 0) / 100.0
   end
 
-  # TODO: Add test
+  def play_count_or_zero
+    play_count || 0
+  end
+
+  def last_played
+    play_date_utc ? play_date_utc.to_time.to_i : -1
+  end
+
+  # NOTE: Clementine does not load these tags to db, but writes these from app
   def write_rating_and_play_count
     Mp3Info.open(location_absolute) do |mp3|
       mp3.tag2.TXXX = [
@@ -58,5 +71,27 @@ class ItunesTrack < Struct.new(*%i{
         "FMPS_PlayCount\u0000#{play_count || 0}",
       ]
     end
+  end
+
+  def write_clementine
+    db = ItunesTrack.db
+
+    result = db.execute(
+      "SELECT rating, playcount FROM songs WHERE title = ? and album = ? and artist = ?",
+      [name, album, artist]
+    )
+
+    if result.size < 1
+      puts "Not found #{self.name}. Skipping..."
+      return false
+    end
+
+    db.execute(
+      "UPDATE songs SET rating = ?, playcount = ?, lastplayed = ? WHERE title = ? and album = ? and artist = ?",
+      [rating_ratio, play_count_or_zero, last_played, name, album, artist]
+    )
+
+    puts "SET rating = #{self.rating_ratio}, playcount = #{play_count_or_zero} for #{self.name}"
+    return true
   end
 end
