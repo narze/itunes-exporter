@@ -55,7 +55,7 @@ class ItunesTrack < Struct.new(*%i{
     Mp3Info.open(location_absolute) do |mp3|
       mp3.tag2.TXXX = [
         "FMPS_Rating\u0000#{rating_ratio}",
-        "FMPS_PlayCount\u0000#{play_count}",
+        "FMPS_PlayCount\u0000#{play_count || 0}",
       ]
     end
   end
