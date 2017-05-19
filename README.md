@@ -20,9 +20,12 @@ Or install it yourself as:
 
     $ gem install itunes-exporter
 
-## Usage
+## Usage (WIP)
 
-TODO: Write usage instructions here
+    $ bundle exec irb
+    > require 'itunes_exporter'
+    > library = ItunesPlaylist.new('/path/to/iTunes/iTunes Library.xml')
+    > results = library.tracks.map { |track| track.write_clementine }
 
 ## Development
 
