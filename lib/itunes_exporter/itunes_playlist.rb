@@ -29,7 +29,6 @@ class ItunesPlaylist < Struct.new(:tracks, :playlists)
                       genre: track_data['Genre'],
                       kind: track_data['Kind'],
                       location: track_data['Location'],
-                      location_absolute: track_data['Location'].sub(%r{^file://(localhost)?}, ''),
                       play_count: track_data['Play Count'],
                       play_date: track_data['Play Date'],
                       play_date_utc: track_data['Play Date UTC'],
@@ -38,7 +37,6 @@ class ItunesPlaylist < Struct.new(:tracks, :playlists)
                       skip_count: track_data['Skip Count'],
                       skip_date: track_data['Skip Date'],
                       rating: track_data['Rating'],
-                      rating_ratio: (track_data['Rating'] || 0) / 100.0,
                       album_rating: track_data['Album Rating'],
                       album_rating_computed: track_data['Album Rating Computed'],
                       comments: track_data['Comments']
