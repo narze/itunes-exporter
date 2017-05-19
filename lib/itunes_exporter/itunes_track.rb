@@ -43,7 +43,7 @@ class ItunesTrack < Struct.new(*%i{
   end
 
   def location_absolute
-    location.sub(%r{^file://(localhost)?}, '')
+    URI.decode(location.sub(%r{^file://(localhost)?}, ''))
   end
 
   def rating_ratio
