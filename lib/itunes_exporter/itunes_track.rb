@@ -23,6 +23,7 @@ class ItunesTrack < Struct.new(*%i{
   genre
   kind
   location
+  location_absolute
   play_count
   play_date
   play_date_utc

@@ -49,7 +49,8 @@ RSpec.describe ItunesPlaylist do
                               album: 'EXIT TRANCE PRESENTS SPEED アニメトランス BEST 7',
                               genre: 'J-Trance',
                               kind: 'MPEG audio file',
-                              location: 'file:///Users/username/Music/iTunes%20test/iTunes%20Media/Music/Compilations/EXIT%20TRANCE%20PRESENTS%20SPEED%20%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%20BEST%207/2-14%20masterpiece.mp3'
+                              location: 'file:///Users/username/Music/iTunes%20test/iTunes%20Media/Music/Compilations/EXIT%20TRANCE%20PRESENTS%20SPEED%20%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%20BEST%207/2-14%20masterpiece.mp3',
+                              location_absolute: '/Users/username/Music/iTunes%20test/iTunes%20Media/Music/Compilations/EXIT%20TRANCE%20PRESENTS%20SPEED%20%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%20BEST%207/2-14%20masterpiece.mp3'
       end
     end
   end
