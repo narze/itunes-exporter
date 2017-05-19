@@ -25,7 +25,6 @@ class ItunesTrack < Struct.new(*%i{
   genre
   kind
   location
-  location_absolute
   play_count
   play_date
   play_date_utc
@@ -34,7 +33,6 @@ class ItunesTrack < Struct.new(*%i{
   loved
   hated
   rating
-  rating_ratio
   album_rating
   album_rating_computed
   comments
