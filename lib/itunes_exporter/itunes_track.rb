@@ -73,7 +73,7 @@ class ItunesTrack < Struct.new(*%i{
     end
   end
 
-  def write_clementine
+  def write_clementine(clear_rating: false)
     db = ItunesTrack.db
 
     result = db.execute(
@@ -84,6 +84,10 @@ class ItunesTrack < Struct.new(*%i{
     if result.size < 1
       puts "Not found #{self.name}. Skipping..."
       return false
+    end
+
+    if clear_rating
+      rating_ratio = -1
     end
 
     db.execute(
